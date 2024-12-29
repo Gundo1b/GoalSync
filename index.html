@@ -4,66 +4,85 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GoalApp</title>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+ 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <!-- Registration Page -->
-  <div id="registerPage">
-    <h2>Register</h2>
-    <input type="email" id="regEmail" placeholder="Enter email" required>
-    <input type="password" id="regPassword" placeholder="Enter password" required>
-    <button onclick="register()">Register</button>
-    <p>Already have an account? <span onclick="showLoginPage()">Login</span></p>
-  </div>
-
-  <!-- Login Page -->
-  <div id="loginPage" class="hidden">
-    <h2>Login</h2>
-    <input type="email" id="loginEmail" placeholder="Enter email" required>
-    <input type="password" id="loginPassword" placeholder="Enter password" required>
-    <button onclick="login()">Login</button>
-    <p>Don't have an account? <span onclick="showRegisterPage()">Register</span></p>
-  </div>
-
-  <!-- GoalApp Dashboard (hidden until logged in) -->
-  <div id="dashboard" class="hidden">
+  <div class="container">
     <header>
-      <h1>GoalApp</h1>
-      <button id="addGoalBtn">+ Add Goal</button>
+      <h1>GoalSync
+      </h1>
+      <button id="addGoalBtn" class="button">+ Add Goal</button>
     </header>
 
-    <main>
+    <main id="dashboard">
       <div class="stats">
         <div class="stat">
-          <h2>5</h2>
+          <h2 id="totalGoals">0</h2>
           <p>Total Goals</p>
         </div>
         <div class="stat">
-          <h2>2</h2>
+          <h2 id="activeGoals">0</h2>
           <p>Active Goals</p>
         </div>
         <div class="stat">
-          <h2>3</h2>
+          <h2 id="finishedGoals">0</h2>
           <p>Finished Goals</p>
         </div>
       </div>
-      <div id="goalList" class="goals"></div>
+      
+      <section id="charts-section">
+        <h2>Goals Statistics</h2>
+        <canvas id="goalCategoryChart"></canvas>
+        <canvas id="goalProgressChart"></canvas>
+      </section>
+
+      <div id="goalList" class="goals">
+        <!-- Goals will be dynamically added here -->
+      </div>
     </main>
 
+    <!-- Add Goal Form Modal -->
     <div id="goalFormContainer" class="hidden">
       <div class="form-overlay">
         <form id="goalForm">
           <h2>Add a New Goal</h2>
+          
           <label for="goalName">Goal:</label>
           <input type="text" id="goalName" required>
+          
+          <label for="category">Category:</label>
+          <select id="category" required>
+            <option value="Personal">Personal</option>
+            <option value="Work">Work</option>
+            <option value="Health">Health</option>
+            <option value="Hobby">Hobby</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <!-- Custom category input, initially hidden -->
+          <label for="customCategory" id="customCategoryLabel" class="hidden">Custom Category:</label>
+          <input type="text" id="customCategory" class="hidden">
+          
+          <label for="priority">Priority:</label>
+          <select id="priority" required>
+            <option value="Normal">Normal</option>
+            <option value="Urgent">Urgent</option>
+          </select>
+
           <label for="startDate">Start Date:</label>
           <input type="date" id="startDate" required>
+          
           <label for="endDate">End Date:</label>
           <input type="date" id="endDate" required>
+          
+          <label for="progress">Progress (%):</label>
+          <input type="number" id="progress" min="0" max="100" required>
+
           <button type="submit">Add Goal</button>
-          <button type="button" id="cancelBtn">Cancel</button>
+          <button type="button" id="cancelBtn" class="button">Cancel</button>
         </form>
       </div>
     </div>
