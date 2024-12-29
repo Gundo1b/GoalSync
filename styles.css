@@ -1,0 +1,338 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    color: #5C6BC0;
+  }
+  
+  button {
+    background-color: #5C6BC0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  button:hover {
+    background-color: #3f51b5;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Goal Form Styles */
+  .form-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #goalForm {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  #goalForm input, #goalForm select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  #goalForm button {
+    width: 100%;
+    padding: 12px;
+    background-color: #5C6BC0;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.1rem;
+  }
+  
+  #goalForm button[type="button"] {
+    background-color: #f44336;
+  }
+  
+  /* Stats Section */
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+  }
+  
+  .stat {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 150px;
+  }
+  
+  .stat h2 {
+    font-size: 2rem;
+    color: #5C6BC0;
+    font-weight: 600;
+  }
+  
+  .stat p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Chart Section */
+  #charts-section {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  #charts-section canvas {
+    max-width: 100%;
+    height: 300px;
+    margin-top: 20px;
+  }
+  
+  /* Goal List */
+  .goals {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .goal-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+  
+  .goal-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .goal-card p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .goal-card .progress-container {
+    width: 100%;
+    height: 10px;
+    background-color: #f0f0f0;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  .goal-card .progress-bar {
+    height: 100%;
+    background-color: #5C6BC0;
+    border-radius: 5px;
+  }
+  
+  .goal-card button {
+    background-color: #FF5252;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .goal-card button:hover {
+    background-color: #d32f2f;
+  }
+  /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body and Fonts */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Centered Container */
+  #registerPage, #loginPage, #dashboard {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Title Styling */
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Input Fields */
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  input[type="email"], input[type="password"] {
+    margin-bottom: 15px;
+  }
+  
+  /* Buttons */
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #5cb85c;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #4cae4c;
+  }
+  
+  /* Links */
+  p {
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  p span {
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  p span:hover {
+    text-decoration: underline;
+  }
+  
+  /* GoalApp Dashboard */
+  #dashboard {
+    display: none;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    body {
+      padding: 10px;
+    }
+  
+    #registerPage, #loginPage {
+      width: 100%;
+      max-width: 100%;
+    }
+  
+    button {
+      font-size: 14px;
+    }
+  
+    input {
+      font-size: 14px;
+    }
+  }
+  
+  /* Form Overlay Styling for Add Goal Form */
+  #goalFormContainer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .form-overlay {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .form-overlay h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-overlay input {
+    margin-bottom: 15px;
+  }
+  
+  .form-overlay button {
+    width: 48%;
+    margin: 0 1%;
+  }
+  
+  .form-overlay button[type="button"] {
+    background-color: #d9534f;
+  }
+  
+  .form-overlay button[type="submit"] {
+    background-color: #5bc0de;
+  }
+  
+  button[type="button"]:hover {
+    background-color: #c9302c;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #31b0d5;
+  }
+  
